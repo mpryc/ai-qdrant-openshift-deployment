@@ -28,6 +28,16 @@ This setup is intended for **development playgrounds**. It uses unencrypted HTTP
 Run the deploy script with optional namespace, which by default is set to `vector-db`:
    ```bash
    ./deploy-qdrant.sh [namespace]
+   [...]
+   Qdrant service is accessible and responding correctly!
+   ****************************************
+   Access your Qdrant API by pointing it to host='qdrant-vector-db.-<truncated>',port='80')
+
+   You can also run the following command to access the Qdrant dashboard locally:
+   oc port-forward -n qdrantabca svc/vector-db-service 6333:6333
+   Then, visit: http://localhost:6333/dashboard
+   ****************************************
+
    ```
    
 3. Cleanup
