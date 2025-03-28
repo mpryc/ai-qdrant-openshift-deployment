@@ -28,6 +28,8 @@ This setup is intended for **development playgrounds**. It uses unencrypted HTTP
 Run the deploy script with optional namespace, which by default is set to `vector-db`:
    ```bash
    ./deploy-qdrant.sh [namespace]
+
+   
    [...]
    Qdrant service is accessible and responding correctly!
    ****************************************
