@@ -2,6 +2,8 @@
 
 This project provides a simple script to deploy the [Qdrant](https://qdrant.tech/) vector search engine on OpenShift.
 
+It takes only one command and ~20seconds on my setup to have working Qdrant DB in the OpenShift cluster.
+
 The script sets up the necessary resources, including the namespace, Qdrant deployment, and services.
 
 It also ensures that the Qdrant service is accessible and provides instructions for port-forwarding to access the Qdrant dashboard locally.
