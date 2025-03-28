@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vector-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vector-db
+  template:
+    metadata:
+      labels:
+        app: vector-db
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+        - name: vector-db
+          image: docker.io/qdrant/qdrant:latest
+          securityContext:
+            privileged: false
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault                
+            capabilities:
+              drop:
+              - ALL
+          ports:
+            - containerPort: 6333
+          env:
+            - name: QDRANT__STORAGE__SNAPSHOTS_PATH
+              value: /qdrant/storage/snapshots
+          volumeMounts:
+            - name: vector-db-storage
+              mountPath: /qdrant/storage
+      volumes:
+        - name: vector-db-storage
+          persistentVolumeClaim:
+            claimName: vector-db-pvc
