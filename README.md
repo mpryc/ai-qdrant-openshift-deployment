@@ -45,5 +45,5 @@ Run the deploy script with optional namespace, which by default is set to `vecto
 3. Cleanup
 Simply remove namespace to remove the deployment
    ```bash
-   oc delete ns [namespace]
+   $ oc delete ns [namespace]
    ```
