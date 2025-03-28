@@ -36,7 +36,7 @@ Run the deploy script with optional namespace, which by default is set to `vecto
    Access your Qdrant API by pointing it to host='qdrant-vector-db.-<truncated>',port='80')
 
    You can also run the following command to access the Qdrant dashboard locally:
-   oc port-forward -n vector-db svc/vector-db-service 6333:6333
+   $ oc port-forward -n vector-db svc/vector-db-service 6333:6333
    Then, visit: http://localhost:6333/dashboard
    ****************************************
 
